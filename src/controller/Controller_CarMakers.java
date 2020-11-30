@@ -28,8 +28,7 @@ public class Controller_CarMakers {
 
                 data2 = cursor.next().toString();
                 json = new JSONObject(data2);
-                System.out.println(json);
-
+                
                 if (json.has("id")) {
                     data[0] = json.get("id").toString();
                 } else {

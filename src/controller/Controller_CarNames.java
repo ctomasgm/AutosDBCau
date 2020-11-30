@@ -5,19 +5,19 @@ import connection.Connection;
 import javax.swing.table.DefaultTableModel;
 import org.json.JSONObject;
 
-public class Controller_ModelDetails {
+public class Controller_CarNames {
     
-    public Controller_ModelDetails() {
+    public Controller_CarNames() {
     }
     
-    public DefaultTableModel listModelDetails() {
+    public DefaultTableModel listCarNames() {
         try {
             DefaultTableModel table = new DefaultTableModel();
-            table.addColumn("Model ID");
-            table.addColumn("Maker");
+            table.addColumn("ID");
             table.addColumn("Model");
+            table.addColumn("Description");
             String data[] = new String[3];
-            Connection conne = new Connection("Model_Details");
+            Connection conne = new Connection("Car_Names");
             DBCursor cursor = conne.getTable().find();
             JSONObject json = null;
             String data2 = "";
@@ -26,19 +26,19 @@ public class Controller_ModelDetails {
 
                 data2 = cursor.next().toString();
                 json = new JSONObject(data2);
-                
-                if (json.has("modelid")) {
-                    data[0] = json.get("modelid").toString();
+               
+                if (json.has("id")) {
+                    data[0] = json.get("id").toString();
                 } else {
                     data[0] = "";
                 }
-                if (json.has("maker")) {
-                    data[1] = json.get("maker").toString();
+                if (json.has("model")) {
+                    data[1] = json.get("model").toString();
                 } else {
                     data[1] = "";
                 }
-                if (json.has("model")) {
-                    data[2] = json.get("model").toString();
+                if (json.has("descr")) {
+                    data[2] = json.get("descr").toString();
                 } else {
                     data[2] = "";
                 }
