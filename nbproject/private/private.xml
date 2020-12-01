@@ -3,9 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/E:/GitHub/AutosDBCau/src/model/Continents.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/controller/Controller_Continents.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/controller/Controller_CarDetails.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/view/JF_gui_Success.java</file>
             <file>file:/E:/GitHub/AutosDBCau/src/controller/Controller_CarMakers.java</file>
-            <file>file:/E:/GitHub/AutosDBCau/src/view/JP_gui_CarMakers.java</file>
-            <file>file:/E:/GitHub/AutosDBCau/src/view/JF_gui.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/view/JF_gui_main.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/controller/Controller_ModelDetails.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/view/JF_gui_Continents.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/connection/Connection.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/view/JF_gui_CarMakers.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/model/Countries.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/view/JF_gui_CarDetails.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/view/JF_gui_Error.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/controller/Controller_CarNames.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/view/JF_gui_CarNames.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/controller/Controller_Countries.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/model/ModelDetails.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/model/CarNames.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/model/CarDetails.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/model/CarMakers.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/view/JF_gui_Countries.java</file>
+            <file>file:/E:/GitHub/AutosDBCau/src/view/JF_gui_ModelDetails.java</file>
         </group>
     </open-files>
 </project-private>

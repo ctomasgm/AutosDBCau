@@ -1,5 +1,7 @@
 package model;
 
+import javax.swing.JTextField;
+
 public class CarDetails {
 
     private int id;
@@ -24,7 +26,6 @@ public class CarDetails {
         this.accel = accel;
         this.year = year;
     }
-
     
 
     public int getId() {

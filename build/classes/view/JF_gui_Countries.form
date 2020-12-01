@@ -46,15 +46,15 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tfCarMakersMaker" alignment="1" max="32767" attributes="0"/>
-                          <Component id="tfCarMakersFullName" max="32767" attributes="0"/>
-                          <Component id="tfCarMakersID" alignment="1" max="32767" attributes="0"/>
+                          <Component id="tfCountryName" alignment="1" max="32767" attributes="0"/>
+                          <Component id="tfContinent" max="32767" attributes="0"/>
+                          <Component id="tfCountryId" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnCarMakersModify" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnCarMakersDelete" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnCarMakersInsert" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
+                          <Component id="btnCountriesModify" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnCountriesDelete" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnCountriesInsert" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
@@ -76,28 +76,28 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfCarMakersID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfCountryId" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfCarMakersMaker" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfCountryName" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfCarMakersFullName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfContinent" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" pref="224" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="btnCarMakersInsert" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="btnCountriesInsert" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnCarMakersModify" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="btnCountriesModify" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnCarMakersDelete" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="btnCountriesDelete" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -107,24 +107,24 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnCarMakersModify">
+    <Component class="javax.swing.JButton" name="btnCountriesModify">
       <Properties>
         <Property name="text" type="java.lang.String" value="Modificar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCarMakersDelete">
+    <Component class="javax.swing.JButton" name="btnCountriesDelete">
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersID">
+    <Component class="javax.swing.JTextField" name="tfCountryId">
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersMaker">
+    <Component class="javax.swing.JTextField" name="tfCountryName">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCarMakersMakerActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCountryNameActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersFullName">
+    <Component class="javax.swing.JTextField" name="tfContinent">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -168,10 +168,13 @@
         <Property name="text" type="java.lang.String" value="Countries"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCarMakersInsert">
+    <Component class="javax.swing.JButton" name="btnCountriesInsert">
       <Properties>
         <Property name="text" type="java.lang.String" value="Insertar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCountriesInsertActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

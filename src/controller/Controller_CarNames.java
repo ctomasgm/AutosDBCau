@@ -1,15 +1,37 @@
 package controller;
 
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.util.JSON;
 import connection.Connection;
 import javax.swing.table.DefaultTableModel;
+import model.CarNames;
 import org.json.JSONObject;
 
 public class Controller_CarNames {
-    
+
+    Connection conne;
+
     public Controller_CarNames() {
     }
-    
+
+    public boolean insertCarNames(CarNames data) {
+        try {
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("id", data.getId());
+            jsonData.put("model", data.getModel());
+            jsonData.put("descr", data.getDescr());
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().insert(dbObject);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+
+    }
+
     public DefaultTableModel listCarNames() {
         try {
             DefaultTableModel table = new DefaultTableModel();
@@ -17,7 +39,7 @@ public class Controller_CarNames {
             table.addColumn("Model");
             table.addColumn("Description");
             String data[] = new String[3];
-            Connection conne = new Connection("Car_Names");
+            conne = new Connection("Car_Names");
             DBCursor cursor = conne.getTable().find();
             JSONObject json = null;
             String data2 = "";
@@ -26,7 +48,7 @@ public class Controller_CarNames {
 
                 data2 = cursor.next().toString();
                 json = new JSONObject(data2);
-               
+
                 if (json.has("id")) {
                     data[0] = json.get("id").toString();
                 } else {

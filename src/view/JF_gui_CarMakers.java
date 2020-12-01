@@ -1,14 +1,13 @@
 package view;
 
-
 import controller.Controller_CarMakers;
+import model.CarMakers;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author carlo
@@ -19,14 +18,17 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
      * Creates new form JF_gui_CarMakers
      */
     JF_gui_main main;
+    JF_gui_Error error;
+    JF_gui_Success success;
+    Controller_CarMakers Ccm;
     public JF_gui_CarMakers() {
-        initComponents();        
-        Controller_CarMakers Ccm = new Controller_CarMakers();
+        initComponents();
+        Ccm = new Controller_CarMakers();
         tblCarMakers.setModel(Ccm.listCarMakers());
         this.setLocationRelativeTo(null);
     }
-    
-    public void refreshTable(){
+
+    public void refreshTable() {
         Controller_CarMakers Ccm = new Controller_CarMakers();
         tblCarMakers.setModel(Ccm.listCarMakers());
     }
@@ -43,9 +45,9 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
         controller_CarMakers1 = new controller.Controller_CarMakers();
         btnCarMakersModify = new javax.swing.JButton();
         btnCarMakersDelete = new javax.swing.JButton();
-        tfCarMakersID = new javax.swing.JTextField();
-        tfCarMakersMaker = new javax.swing.JTextField();
-        tfCarMakersFullName = new javax.swing.JTextField();
+        tfId = new javax.swing.JTextField();
+        tfMaker = new javax.swing.JTextField();
+        tfFullName = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -53,7 +55,7 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblCarMakers = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        tfCarMakersCountry = new javax.swing.JTextField();
+        tfCountry = new javax.swing.JTextField();
         btnCarMakersInsert = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -67,9 +69,9 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
 
         btnCarMakersDelete.setText("Eliminar");
 
-        tfCarMakersMaker.addActionListener(new java.awt.event.ActionListener() {
+        tfMaker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCarMakersMakerActionPerformed(evt);
+                tfMakerActionPerformed(evt);
             }
         });
 
@@ -94,13 +96,18 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setText("CarMakers");
 
-        tfCarMakersCountry.addActionListener(new java.awt.event.ActionListener() {
+        tfCountry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCarMakersCountryActionPerformed(evt);
+                tfCountryActionPerformed(evt);
             }
         });
 
         btnCarMakersInsert.setText("Insertar");
+        btnCarMakersInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarMakersInsertActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,10 +128,10 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfCarMakersCountry)
-                            .addComponent(tfCarMakersMaker, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfCarMakersFullName)
-                            .addComponent(tfCarMakersID, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(tfCountry)
+                            .addComponent(tfMaker, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfFullName)
+                            .addComponent(tfId, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(42, 42, 42))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(206, 206, 206)
@@ -145,19 +152,19 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfCarMakersID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfCarMakersMaker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfMaker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfCarMakersFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfCarMakersCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCarMakersInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,19 +180,44 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfCarMakersMakerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCarMakersMakerActionPerformed
+    private void tfMakerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMakerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfCarMakersMakerActionPerformed
+    }//GEN-LAST:event_tfMakerActionPerformed
 
-    private void tfCarMakersCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCarMakersCountryActionPerformed
+    private void tfCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCountryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfCarMakersCountryActionPerformed
+    }//GEN-LAST:event_tfCountryActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         main = new JF_gui_main();
         main.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_formWindowClosed
+
+    private void btnCarMakersInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarMakersInsertActionPerformed
+       CarMakers car = new CarMakers(Integer.parseInt(tfId.getText()), tfMaker.getText(), tfFullName.getText(), Integer.parseInt(tfCountry.getText()));
+        if (Ccm.insertCarMakers(car)) {
+            success = new JF_gui_Success();
+            success.setVisible(true);
+            try {
+                Thread.sleep(3000);
+            } catch (Exception e) {
+
+            }
+            success.setVisible(false);
+
+        } else {
+            error = new JF_gui_Error();
+            error.setVisible(true);
+            try {
+                Thread.sleep(3000);
+            } catch (Exception e) {
+
+            }
+            error.setVisible(false);
+        }
+
+    }//GEN-LAST:event_btnCarMakersInsertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,9 +266,9 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tblCarMakers;
-    private javax.swing.JTextField tfCarMakersCountry;
-    private javax.swing.JTextField tfCarMakersFullName;
-    private javax.swing.JTextField tfCarMakersID;
-    private javax.swing.JTextField tfCarMakersMaker;
+    private javax.swing.JTextField tfCountry;
+    private javax.swing.JTextField tfFullName;
+    private javax.swing.JTextField tfId;
+    private javax.swing.JTextField tfMaker;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,13 +1,35 @@
 package controller;
 
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.util.JSON;
 import connection.Connection;
 import javax.swing.table.DefaultTableModel;
+import model.Countries;
 import org.json.JSONObject;
 
 public class Controller_Countries {
 
+    Connection conne;
+
     public Controller_Countries() {
+
+    }
+
+    public boolean insertCountries(Countries data) {
+        try {
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("countryid", data.getCountryId());
+            jsonData.put("countryname", data.getCountryName());
+            jsonData.put("continent", data.getContinent());
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().insert(dbObject);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
 
     }
 
@@ -18,7 +40,7 @@ public class Controller_Countries {
             table.addColumn("Country Name");
             table.addColumn("Continent ");
             String data[] = new String[3];
-            Connection conne = new Connection("Countries");
+            conne = new Connection("Countries");
             DBCursor cursor = conne.getTable().find();
             JSONObject json = null;
             String data2 = "";
@@ -27,7 +49,7 @@ public class Controller_Countries {
 
                 data2 = cursor.next().toString();
                 json = new JSONObject(data2);
-               
+
                 if (json.has("countryid")) {
                     data[0] = json.get("countryid").toString();
                 } else {
@@ -43,7 +65,7 @@ public class Controller_Countries {
                 } else {
                     data[2] = "";
                 }
-    
+
                 table.addRow(data);
             }
 

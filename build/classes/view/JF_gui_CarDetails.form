@@ -45,10 +45,10 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="tfCarMakersFullName" alignment="0" pref="182" max="32767" attributes="0"/>
-                  <Component id="tfCarMakersMaker" alignment="0" max="32767" attributes="0"/>
-                  <Component id="tfCarMakersID" alignment="0" max="32767" attributes="0"/>
-                  <Component id="tfCarMakersCountry" max="32767" attributes="0"/>
+                  <Component id="tfCylinders" alignment="0" pref="182" max="32767" attributes="0"/>
+                  <Component id="tfMpg" alignment="0" max="32767" attributes="0"/>
+                  <Component id="tfId" alignment="0" max="32767" attributes="0"/>
+                  <Component id="tfEdispl" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -61,10 +61,10 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="tfCarMakersFullName1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tfCarMakersMaker1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tfCarMakersID1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tfCarMakersCountry1" alignment="1" min="-2" pref="182" max="-2" attributes="0"/>
+                          <Component id="tfAccel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfWeight" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfHorsePower" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfYear" alignment="1" min="-2" pref="182" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -92,22 +92,22 @@
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tfCarMakersID" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfId" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tfCarMakersMaker" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfMpg" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tfCarMakersFullName" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfCylinders" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tfCarMakersCountry" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfEdispl" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -121,22 +121,22 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfCarMakersID1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfHorsePower" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfCarMakersMaker1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfWeight" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfCarMakersFullName1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfAccel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfCarMakersCountry1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfYear" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -159,14 +159,17 @@
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersID">
+    <Component class="javax.swing.JTextField" name="tfId">
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersMaker">
+    <Component class="javax.swing.JTextField" name="tfMpg">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCarMakersMakerActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfMpgActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersFullName">
+    <Component class="javax.swing.JTextField" name="tfCylinders">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCylindersActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -215,34 +218,37 @@
         <Property name="text" type="java.lang.String" value="CarDetails"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersCountry">
+    <Component class="javax.swing.JTextField" name="tfEdispl">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCarMakersCountryActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfEdisplActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCarMakersInsert">
       <Properties>
         <Property name="text" type="java.lang.String" value="Insertar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCarMakersInsertActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
         <Property name="text" type="java.lang.String" value="year"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersCountry1">
+    <Component class="javax.swing.JTextField" name="tfYear">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCarMakersCountry1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfYearActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersID1">
+    <Component class="javax.swing.JTextField" name="tfHorsePower">
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersMaker1">
+    <Component class="javax.swing.JTextField" name="tfWeight">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCarMakersMaker1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfWeightActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersFullName1">
+    <Component class="javax.swing.JTextField" name="tfAccel">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>

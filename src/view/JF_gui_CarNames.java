@@ -2,6 +2,8 @@ package view;
 
 import controller.Controller_CarMakers;
 import controller.Controller_CarNames;
+import model.CarMakers;
+import model.CarNames;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,10 +20,13 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
      * Creates new form JF_gui_CarMakers
      */
     JF_gui_main main;
+    JF_gui_Error error;
+    JF_gui_Success success;
+    Controller_CarNames Ccn;
 
     public JF_gui_CarNames() {
         initComponents();
-        Controller_CarNames Ccn = new Controller_CarNames();
+        Ccn = new Controller_CarNames();
         tblCarMakers.setModel(Ccn.listCarNames());
         this.setLocationRelativeTo(null);
     }
@@ -41,18 +46,18 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
     private void initComponents() {
 
         controller_CarMakers1 = new controller.Controller_CarMakers();
-        btnCarMakersModify = new javax.swing.JButton();
-        btnCarMakersDelete = new javax.swing.JButton();
-        tfCarMakersID = new javax.swing.JTextField();
-        tfCarMakersMaker = new javax.swing.JTextField();
-        tfCarMakersFullName = new javax.swing.JTextField();
+        btnCarNamesModify = new javax.swing.JButton();
+        btnCarNamesDelete = new javax.swing.JButton();
+        tfID = new javax.swing.JTextField();
+        tfModel = new javax.swing.JTextField();
+        tfDescription = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblCarMakers = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        btnCarMakersInsert = new javax.swing.JButton();
+        btnCarNamesInsert = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -61,13 +66,13 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
             }
         });
 
-        btnCarMakersModify.setText("Modificar");
+        btnCarNamesModify.setText("Modificar");
 
-        btnCarMakersDelete.setText("Eliminar");
+        btnCarNamesDelete.setText("Eliminar");
 
-        tfCarMakersMaker.addActionListener(new java.awt.event.ActionListener() {
+        tfModel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCarMakersMakerActionPerformed(evt);
+                tfModelActionPerformed(evt);
             }
         });
 
@@ -90,7 +95,12 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setText("CarNames");
 
-        btnCarMakersInsert.setText("Insertar");
+        btnCarNamesInsert.setText("Insertar");
+        btnCarNamesInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarNamesInsertActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,18 +120,18 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfCarMakersMaker, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfCarMakersFullName)
-                            .addComponent(tfCarMakersID, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(tfModel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfDescription)
+                            .addComponent(tfID, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(42, 42, 42))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(206, 206, 206)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCarMakersModify, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCarMakersDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCarMakersInsert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnCarNamesModify, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCarNamesDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCarNamesInsert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
@@ -133,23 +143,23 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfCarMakersID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfCarMakersMaker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfCarMakersFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
                         .addGap(28, 28, 28))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCarMakersInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCarNamesInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnCarMakersModify, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCarNamesModify, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnCarMakersDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCarNamesDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(38, 38, 38)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                 .addContainerGap())
@@ -158,15 +168,39 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfCarMakersMakerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCarMakersMakerActionPerformed
+    private void tfModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfModelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfCarMakersMakerActionPerformed
+    }//GEN-LAST:event_tfModelActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         main = new JF_gui_main();
         main.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_formWindowClosed
+
+    private void btnCarNamesInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarNamesInsertActionPerformed
+        CarNames car = new CarNames(Integer.parseInt(tfID.getText()), tfModel.getText(),tfDescription.getText());
+        if (Ccn.insertCarNames(car)) {
+            success = new JF_gui_Success();
+            success.setVisible(true);
+            try {
+                Thread.sleep(3000);
+            } catch (Exception e) {
+
+            }
+            success.setVisible(false);
+
+        } else {
+            error = new JF_gui_Error();
+            error.setVisible(true);
+            try {
+                Thread.sleep(3000);
+            } catch (Exception e) {
+
+            }
+            error.setVisible(false);
+        }
+    }//GEN-LAST:event_btnCarNamesInsertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,9 +239,9 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCarMakersDelete;
-    private javax.swing.JButton btnCarMakersInsert;
-    private javax.swing.JButton btnCarMakersModify;
+    private javax.swing.JButton btnCarNamesDelete;
+    private javax.swing.JButton btnCarNamesInsert;
+    private javax.swing.JButton btnCarNamesModify;
     private controller.Controller_CarMakers controller_CarMakers1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -215,8 +249,8 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tblCarMakers;
-    private javax.swing.JTextField tfCarMakersFullName;
-    private javax.swing.JTextField tfCarMakersID;
-    private javax.swing.JTextField tfCarMakersMaker;
+    private javax.swing.JTextField tfDescription;
+    private javax.swing.JTextField tfID;
+    private javax.swing.JTextField tfModel;
     // End of variables declaration//GEN-END:variables
 }

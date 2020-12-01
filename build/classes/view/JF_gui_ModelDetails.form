@@ -42,9 +42,9 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="tfCarMakersFullName" max="32767" attributes="0"/>
-                          <Component id="tfCarMakersMaker" alignment="1" max="32767" attributes="0"/>
-                          <Component id="tfCarMakersID" alignment="1" max="32767" attributes="0"/>
+                          <Component id="tfModel" max="32767" attributes="0"/>
+                          <Component id="tfMaker" alignment="1" max="32767" attributes="0"/>
+                          <Component id="tfModelId" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
@@ -55,9 +55,9 @@
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnCarMakersModify" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnCarMakersDelete" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnCarMakersInsert" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnModelDetailsModify" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnModelDetailsDelete" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnModelDetailsInsert" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
@@ -72,25 +72,25 @@
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfCarMakersID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfModelId" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="btnCarMakersInsert" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="btnModelDetailsInsert" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="tfCarMakersMaker" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfMaker" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="btnCarMakersModify" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="btnModelDetailsModify" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnCarMakersDelete" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="tfCarMakersFullName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnModelDetailsDelete" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="tfModel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -103,24 +103,24 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnCarMakersModify">
+    <Component class="javax.swing.JButton" name="btnModelDetailsModify">
       <Properties>
         <Property name="text" type="java.lang.String" value="Modificar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCarMakersDelete">
+    <Component class="javax.swing.JButton" name="btnModelDetailsDelete">
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersID">
+    <Component class="javax.swing.JTextField" name="tfModelId">
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersMaker">
+    <Component class="javax.swing.JTextField" name="tfMaker">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCarMakersMakerActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfMakerActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCarMakersFullName">
+    <Component class="javax.swing.JTextField" name="tfModel">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -164,10 +164,13 @@
         <Property name="text" type="java.lang.String" value="Model Details"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCarMakersInsert">
+    <Component class="javax.swing.JButton" name="btnModelDetailsInsert">
       <Properties>
         <Property name="text" type="java.lang.String" value="Insertar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModelDetailsInsertActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

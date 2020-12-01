@@ -1,19 +1,47 @@
 package controller;
 
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.util.JSON;
 import connection.Connection;
 import javax.swing.table.DefaultTableModel;
+import model.CarDetails;
 import org.json.JSONObject;
 
 public class Controller_CarDetails {
 
+    Connection conne;
+
     public Controller_CarDetails() {
+
+    }
+
+    public boolean insertCarDetails(CarDetails data) {
+        try {
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("id", data.getId());
+            jsonData.put("mpg", data.getMpg());
+            jsonData.put("cylinders", data.getCylinders());
+            jsonData.put("edispl", data.getEdispl());
+            jsonData.put("horsepower", data.getHorsepower());
+            jsonData.put("weight", data.getWeight());
+            jsonData.put("accel", data.getAccel());
+            jsonData.put("year", data.getYear());
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().insert(dbObject);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
 
     }
 
     public DefaultTableModel listCarDetails() {
         try {
             DefaultTableModel table = new DefaultTableModel();
+            conne = new Connection("Car_Details");
             table.addColumn("ID");
             table.addColumn("MPG");
             table.addColumn("Cylinders");
@@ -23,7 +51,6 @@ public class Controller_CarDetails {
             table.addColumn("Accel");
             table.addColumn("Year");
             String data[] = new String[8];
-            Connection conne = new Connection("Car_Details");
             DBCursor cursor = conne.getTable().find();
             JSONObject json = null;
             String data2 = "";
@@ -32,7 +59,7 @@ public class Controller_CarDetails {
 
                 data2 = cursor.next().toString();
                 json = new JSONObject(data2);
-            
+
                 if (json.has("id")) {
                     data[0] = json.get("id").toString();
                 } else {
@@ -75,7 +102,6 @@ public class Controller_CarDetails {
                 }
                 table.addRow(data);
             }
-
             return table;
         } catch (Exception e) {
             DefaultTableModel table = new DefaultTableModel();

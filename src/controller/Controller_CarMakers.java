@@ -1,13 +1,36 @@
 package controller;
 
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.util.JSON;
 import connection.Connection;
 import javax.swing.table.DefaultTableModel;
+import model.CarMakers;
 import org.json.JSONObject;
 
 public class Controller_CarMakers {
 
+    Connection conne;
+
     public Controller_CarMakers() {
+
+    }
+
+    public boolean insertCarMakers(CarMakers data) {
+        try {
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("id", data.getId());
+            jsonData.put("maker", data.getMaker());
+            jsonData.put("fulllname", data.getFullName());
+            jsonData.put("country", data.getCountry());
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().insert(dbObject);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
 
     }
 
@@ -19,7 +42,7 @@ public class Controller_CarMakers {
             table.addColumn("Full Name");
             table.addColumn("Country");
             String data[] = new String[4];
-            Connection conne = new Connection("Car_Makers");
+            conne = new Connection("Car_Makers");
             DBCursor cursor = conne.getTable().find();
             JSONObject json = null;
             String data2 = "";
@@ -28,7 +51,7 @@ public class Controller_CarMakers {
 
                 data2 = cursor.next().toString();
                 json = new JSONObject(data2);
-                
+
                 if (json.has("id")) {
                     data[0] = json.get("id").toString();
                 } else {
