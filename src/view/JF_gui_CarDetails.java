@@ -20,6 +20,7 @@ public class JF_gui_CarDetails extends javax.swing.JFrame {
     JF_gui_main main;
     JF_gui_Error error;
     JF_gui_Success success;
+    JF_gui_Update_CarDetails updateCarDetails;
 
     Controller_CarDetails Ccd;
 
@@ -76,6 +77,11 @@ public class JF_gui_CarDetails extends javax.swing.JFrame {
         });
 
         btnCarMakersModify.setText("Modificar");
+        btnCarMakersModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarMakersModifyActionPerformed(evt);
+            }
+        });
 
         btnCarMakersDelete.setText("Eliminar");
 
@@ -294,6 +300,12 @@ public class JF_gui_CarDetails extends javax.swing.JFrame {
     private void tfCylindersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCylindersActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfCylindersActionPerformed
+
+    private void btnCarMakersModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarMakersModifyActionPerformed
+       updateCarDetails = new JF_gui_Update_CarDetails();
+       updateCarDetails.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_btnCarMakersModifyActionPerformed
 
     /**
      * @param args the command line arguments

@@ -21,7 +21,7 @@ public class Controller_CarMakers {
             JSONObject jsonData = new JSONObject();
             jsonData.put("id", data.getId());
             jsonData.put("maker", data.getMaker());
-            jsonData.put("fulllname", data.getFullName());
+            jsonData.put("fullname", data.getFullName());
             jsonData.put("country", data.getCountry());
 
             DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
@@ -85,4 +85,5 @@ public class Controller_CarMakers {
             return table;
         }
     }
+    
 }
