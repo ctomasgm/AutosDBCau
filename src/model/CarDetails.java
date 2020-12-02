@@ -1,6 +1,7 @@
 package model;
 
 import javax.swing.JTextField;
+import org.json.JSONObject;
 
 public class CarDetails {
 
@@ -14,6 +15,33 @@ public class CarDetails {
     private int year;
 
     public CarDetails() {
+    }
+    
+    public CarDetails(JSONObject json) {
+        if (json.has("year")) {
+            this.year = Integer.parseInt(json.get("year").toString());
+        }
+        if (json.has("id")) {
+            this.id = Integer.parseInt(json.get("id").toString());
+        }
+        if (json.has("mpg")) {
+            this.mpg = Double.parseDouble(json.get("mpg").toString());
+        }
+        if (json.has("accel")) {
+            this.accel = Double.parseDouble(json.get("accel").toString());
+        }
+        if (json.has("cylinders")) {
+            this.cylinders = Integer.parseInt(json.get("cylinders").toString());
+        }
+        if (json.has("edispl")) {
+            this.edispl = Integer.parseInt(json.get("edispl").toString());
+        }
+        if (json.has("horsepower")) {
+            this.horsepower = Integer.parseInt(json.get("horsepower").toString());
+        }
+        if (json.has("weight")) {
+            this.weight = Integer.parseInt(json.get("weight").toString());
+        } 
     }
 
     public CarDetails(int id, double mpg, int cylinders, int edispl, int horsepower, int weight, double accel, int year) {

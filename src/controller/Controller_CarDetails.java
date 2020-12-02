@@ -50,7 +50,7 @@ public class Controller_CarDetails {
             table.addColumn("Weight");
             table.addColumn("Accel");
             table.addColumn("Year");
-            String data[] = new String[8];
+            String data[] = new String[9];
             DBCursor cursor = conne.getTable().find();
             JSONObject json = null;
             String data2 = "";
@@ -75,30 +75,35 @@ public class Controller_CarDetails {
                 } else {
                     data[2] = "";
                 }
-                if (json.has("horsepower")) {
-                    data[3] = json.get("horsepower").toString();
+                if (json.has("edispl")) {
+                    data[3] = json.get("edispl").toString();
                 } else {
                     data[3] = "";
                 }
-                if (json.has("weight")) {
-                    data[4] = json.get("weight").toString();
+                if (json.has("horsepower")) {
+                    data[4] = json.get("horsepower").toString();
                 } else {
                     data[4] = "";
                 }
-                if (json.has("accel")) {
-                    data[5] = json.get("accel").toString();
+                if (json.has("weight")) {
+                    data[5] = json.get("weight").toString();
                 } else {
                     data[5] = "";
                 }
-                if (json.has("year")) {
-                    data[6] = json.get("year").toString();
+                if (json.has("accel")) {
+                    data[6] = json.get("accel").toString();
                 } else {
                     data[6] = "";
                 }
-                if (json.has("country")) {
-                    data[7] = json.get("country").toString();
+                if (json.has("year")) {
+                    data[7] = json.get("year").toString();
                 } else {
                     data[7] = "";
+                }
+                if (json.has("country")) {
+                    data[8] = json.get("country").toString();
+                } else {
+                    data[8] = "";
                 }
                 table.addRow(data);
             }
@@ -111,5 +116,52 @@ public class Controller_CarDetails {
             table.addRow(data);
             return table;
         }
+    }
+    
+    public JSONObject getCarDetail(int carId) {
+        try {
+            conne = new Connection("Car_Details");
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("id", carId);
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            DBObject res = conne.getTable().findOne(dbObject);
+            JSONObject json = new JSONObject(res.toString());
+     
+            return json;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+
+    }
+    
+    public boolean updateCarDetail(CarDetails car) {
+        try {
+            conne = new Connection("Car_Details");
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("id", car.getId());
+            jsonData.put("mpg", car.getMpg());
+            jsonData.put("cylinders", car.getCylinders());
+            jsonData.put("edispl", car.getEdispl());
+            jsonData.put("horsepower", car.getHorsepower());
+            jsonData.put("weight", car.getWeight());
+            jsonData.put("accel", car.getAccel());
+            jsonData.put("year", car.getYear());
+            
+            JSONObject jsonQuery = new JSONObject();
+            jsonQuery.put("id", car.getId());
+
+            DBObject dbObjectQuery = (DBObject) JSON.parse(jsonQuery.toString());
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().update(dbObjectQuery, dbObject);
+            
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+
     }
 }
