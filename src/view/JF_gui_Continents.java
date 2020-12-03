@@ -21,7 +21,9 @@ public class JF_gui_Continents extends javax.swing.JFrame {
     JF_gui_main main;
     JF_gui_Error error;
     JF_gui_Success success;
-    Controller_Continents Ccont ;
+    Controller_Continents Ccont;
+    JF_gui_Update_Continents updateContinents;
+    JF_gui_Delete_Continents deleteContinents;
 
     public JF_gui_Continents() {
         initComponents();
@@ -65,6 +67,11 @@ public class JF_gui_Continents extends javax.swing.JFrame {
         });
 
         btnContinentsModify.setText("Modificar");
+        btnContinentsModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContinentsModifyActionPerformed(evt);
+            }
+        });
 
         btnContinentsDelete.setText("Eliminar");
         btnContinentsDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -184,7 +191,7 @@ public class JF_gui_Continents extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void btnContinentsInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinentsInsertActionPerformed
-       
+
         Continents car = new Continents(Integer.parseInt(tfContId.getText()), tfContinent.getText());
         if (Ccont.insertContinents(car)) {
             success = new JF_gui_Success();
@@ -214,15 +221,16 @@ public class JF_gui_Continents extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnContinentsDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinentsDeleteActionPerformed
-      error = new JF_gui_Error();
-            error.setVisible(true);
-            try {
-                Thread.sleep(3000);
-            } catch (Exception e) {
-
-            }
-            error.setVisible(false);
+        deleteContinents = new JF_gui_Delete_Continents();
+        deleteContinents.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnContinentsDeleteActionPerformed
+
+    private void btnContinentsModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinentsModifyActionPerformed
+        updateContinents = new JF_gui_Update_Continents();
+        updateContinents.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnContinentsModifyActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONObject;
+
 public class CarMakers {
 
     private int id;
@@ -8,6 +10,21 @@ public class CarMakers {
     private int country;
 
     public CarMakers() {
+    }
+    
+    public CarMakers(JSONObject json) {
+        if (json.has("id")) {
+            this.id = Integer.parseInt(json.get("id").toString());
+        }
+        if (json.has("maker")) {
+            this.maker = json.get("maker").toString();
+        }
+        if (json.has("fullname")) {
+            this.fullName = json.get("fullname").toString();
+        }
+        if (json.has("country")) {
+            this.country = Integer.parseInt(json.get("country").toString());
+        }
     }
 
     public CarMakers(int id, String maker, String fullName, int country) {

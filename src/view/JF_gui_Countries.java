@@ -21,6 +21,8 @@ public class JF_gui_Countries extends javax.swing.JFrame {
     JF_gui_Error error;
     JF_gui_Success success;
     Controller_Countries Ccount;
+    JF_gui_Update_Countries updateCountries;
+    JF_gui_Delete_Countries deleteCountries;
 
     public JF_gui_Countries() {
         initComponents();
@@ -65,8 +67,18 @@ public class JF_gui_Countries extends javax.swing.JFrame {
         });
 
         btnCountriesModify.setText("Modificar");
+        btnCountriesModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCountriesModifyActionPerformed(evt);
+            }
+        });
 
         btnCountriesDelete.setText("Eliminar");
+        btnCountriesDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCountriesDeleteActionPerformed(evt);
+            }
+        });
 
         tfCountryName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +212,19 @@ public class JF_gui_Countries extends javax.swing.JFrame {
             error.setVisible(false);
         }
     }//GEN-LAST:event_btnCountriesInsertActionPerformed
+
+    private void btnCountriesModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountriesModifyActionPerformed
+        updateCountries = new JF_gui_Update_Countries();
+        updateCountries.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCountriesModifyActionPerformed
+
+    private void btnCountriesDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountriesDeleteActionPerformed
+        // TODO add your handling code here:
+        deleteCountries = new JF_gui_Delete_Countries();
+        deleteCountries.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCountriesDeleteActionPerformed
 
     /**
      * @param args the command line arguments

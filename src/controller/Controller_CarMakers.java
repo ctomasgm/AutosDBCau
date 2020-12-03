@@ -5,6 +5,7 @@ import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
 import connection.Connection;
 import javax.swing.table.DefaultTableModel;
+import model.CarDetails;
 import model.CarMakers;
 import org.json.JSONObject;
 

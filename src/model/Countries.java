@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONObject;
+
 public class Countries {
 
     private int countryId;
@@ -7,6 +9,18 @@ public class Countries {
     private String continent;
 
     public Countries() {
+    }
+    
+    public Countries(JSONObject json) {
+        if (json.has("countryid")) {
+            this.countryId = Integer.parseInt(json.get("countryid").toString());
+        }
+        if (json.has("countryname")) {
+            this.countryName = json.get("countryname").toString();
+        }
+        if (json.has("continent")) {
+            this.continent = json.get("continent").toString();
+        }
     }
 
     public Countries(int countryId, String countryName, String continent) {

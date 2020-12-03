@@ -23,6 +23,8 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
     JF_gui_Error error;
     JF_gui_Success success;
     Controller_CarNames Ccn;
+    JF_gui_Update_CarNames updateCarNames;
+    JF_gui_Delete_CarNames deleteCarNames;
 
     public JF_gui_CarNames() {
         initComponents();
@@ -67,8 +69,18 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
         });
 
         btnCarNamesModify.setText("Modificar");
+        btnCarNamesModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarNamesModifyActionPerformed(evt);
+            }
+        });
 
         btnCarNamesDelete.setText("Eliminar");
+        btnCarNamesDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarNamesDeleteActionPerformed(evt);
+            }
+        });
 
         tfModel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,6 +213,19 @@ public class JF_gui_CarNames extends javax.swing.JFrame {
             error.setVisible(false);
         }
     }//GEN-LAST:event_btnCarNamesInsertActionPerformed
+
+    private void btnCarNamesModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarNamesModifyActionPerformed
+        updateCarNames = new JF_gui_Update_CarNames();
+        updateCarNames.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCarNamesModifyActionPerformed
+
+    private void btnCarNamesDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarNamesDeleteActionPerformed
+        // TODO add your handling code here:
+        deleteCarNames = new JF_gui_Delete_CarNames();
+        deleteCarNames.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCarNamesDeleteActionPerformed
 
     /**
      * @param args the command line arguments

@@ -21,6 +21,9 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
     JF_gui_Error error;
     JF_gui_Success success;
     Controller_CarMakers Ccm;
+    JF_gui_Update_CarMakers updateCarMakers;
+    JF_gui_Delete_CarMakers deleteCarMakers;
+            
     public JF_gui_CarMakers() {
         initComponents();
         Ccm = new Controller_CarMakers();
@@ -66,8 +69,18 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
         });
 
         btnCarMakersModify.setText("Modificar");
+        btnCarMakersModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarMakersModifyActionPerformed(evt);
+            }
+        });
 
         btnCarMakersDelete.setText("Eliminar");
+        btnCarMakersDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarMakersDeleteActionPerformed(evt);
+            }
+        });
 
         tfMaker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,6 +231,19 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnCarMakersInsertActionPerformed
+
+    private void btnCarMakersModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarMakersModifyActionPerformed
+        updateCarMakers = new JF_gui_Update_CarMakers();
+        updateCarMakers.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCarMakersModifyActionPerformed
+
+    private void btnCarMakersDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarMakersDeleteActionPerformed
+        // TODO add your handling code here:
+        deleteCarMakers = new JF_gui_Delete_CarMakers();
+        deleteCarMakers.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCarMakersDeleteActionPerformed
 
     /**
      * @param args the command line arguments

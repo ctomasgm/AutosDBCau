@@ -162,7 +162,6 @@ public class Controller_CarDetails {
             System.out.println(e);
             return false;
         }
-
     }
     
     public boolean deleteCarDetail(CarDetails data){
