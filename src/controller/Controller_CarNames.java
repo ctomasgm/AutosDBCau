@@ -78,4 +78,61 @@ public class Controller_CarNames {
             return table;
         }
     }
+    
+    public JSONObject getCarName(int carNameId) {
+        try {
+            conne = new Connection("Car_Names");
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("id", carNameId);
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            DBObject res = conne.getTable().findOne(dbObject);
+            JSONObject json = new JSONObject(res.toString());
+     
+            return json;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+
+    }
+    
+    public boolean updateCarName(CarNames carName) {
+        try {
+            conne = new Connection("Car_Names");
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("id", carName.getId());
+            jsonData.put("model", carName.getModel());
+            jsonData.put("descr", carName.getDescr());
+            
+            JSONObject jsonQuery = new JSONObject();
+            jsonQuery.put("id", carName.getId());
+
+            DBObject dbObjectQuery = (DBObject) JSON.parse(jsonQuery.toString());
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().update(dbObjectQuery, dbObject);
+            
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+    }
+    
+    public boolean deleteCarNames(CarNames data){
+        try{
+            conne = new Connection("Car_Names");
+            JSONObject jsonData = new JSONObject();
+            
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().remove(dbObject);
+            
+            return true;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return false;
+        }
+    }
 }

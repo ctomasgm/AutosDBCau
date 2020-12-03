@@ -79,4 +79,61 @@ public class Controller_Countries {
             return table;
         }
     }
+    
+    public JSONObject getCountry(int countryId) {
+        try {
+            conne = new Connection("Countries");
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("countryid", countryId);
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            DBObject res = conne.getTable().findOne(dbObject);
+            JSONObject json = new JSONObject(res.toString());
+     
+            return json;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+
+    }
+    
+    public boolean updateCountry(Countries country) {
+        try {
+            conne = new Connection("Countries");
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("countryid", country.getCountryId());
+            jsonData.put("countryname", country.getCountryName());
+            jsonData.put("continent", country.getContinent());
+            
+            JSONObject jsonQuery = new JSONObject();
+            jsonQuery.put("countryid", country.getCountryId());
+
+            DBObject dbObjectQuery = (DBObject) JSON.parse(jsonQuery.toString());
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().update(dbObjectQuery, dbObject);
+            
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+    }
+    
+    public boolean deleteCountries(Countries data){
+        try{
+            conne = new Connection("Coutries");
+            JSONObject jsonData = new JSONObject();
+            
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().remove(dbObject);
+            
+            return true;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return false;
+        }
+    }
 }

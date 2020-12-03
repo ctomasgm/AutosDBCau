@@ -21,6 +21,7 @@ public class JF_gui_CarDetails extends javax.swing.JFrame {
     JF_gui_Error error;
     JF_gui_Success success;
     JF_gui_Update_CarDetails updateCarDetails;
+    JF_gui_Delete_CarDetails deleteCarDetails;
 
     Controller_CarDetails Ccd;
 
@@ -84,6 +85,11 @@ public class JF_gui_CarDetails extends javax.swing.JFrame {
         });
 
         btnCarMakersDelete.setText("Eliminar");
+        btnCarMakersDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarMakersDeleteActionPerformed(evt);
+            }
+        });
 
         tfMpg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -302,10 +308,17 @@ public class JF_gui_CarDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_tfCylindersActionPerformed
 
     private void btnCarMakersModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarMakersModifyActionPerformed
-       updateCarDetails = new JF_gui_Update_CarDetails();
-       updateCarDetails.setVisible(true);
-       this.dispose();
+        updateCarDetails = new JF_gui_Update_CarDetails();
+        updateCarDetails.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnCarMakersModifyActionPerformed
+
+    private void btnCarMakersDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarMakersDeleteActionPerformed
+        // TODO add your handling code here:
+        deleteCarDetails = new JF_gui_Delete_CarDetails();
+        deleteCarDetails.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCarMakersDeleteActionPerformed
 
     /**
      * @param args the command line arguments

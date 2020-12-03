@@ -85,5 +85,62 @@ public class Controller_CarMakers {
             return table;
         }
     }
+    public JSONObject getCarMaker(int carMakerId) {
+        try {
+            conne = new Connection("Car_Makers");
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("id", carMakerId);
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            DBObject res = conne.getTable().findOne(dbObject);
+            JSONObject json = new JSONObject(res.toString());
+     
+            return json;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+
+    }
+    
+    public boolean updateCarMaker(CarMakers carMaker) {
+        try {
+            conne = new Connection("Car_Makers");
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("id", carMaker.getId());
+            jsonData.put("maker", carMaker.getMaker());
+            jsonData.put("fullname", carMaker.getFullName());
+            jsonData.put("country", carMaker.getCountry());
+            
+            JSONObject jsonQuery = new JSONObject();
+            jsonQuery.put("id", carMaker.getId());
+
+            DBObject dbObjectQuery = (DBObject) JSON.parse(jsonQuery.toString());
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().update(dbObjectQuery, dbObject);
+            
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+    }
+    
+    public boolean deleteCarMakers(CarMakers data){
+        try{
+            conne = new Connection("Car_Makers");
+            JSONObject jsonData = new JSONObject();
+            
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().remove(dbObject);
+            
+            return true;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return false;
+        }
+    }
     
 }

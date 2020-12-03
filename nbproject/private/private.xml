@@ -3,12 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Uriel/Documents/NetBeansProjects/AutosDBCau/src/controller/Controller_CarDetails.java</file>
-            <file>file:/C:/Users/Uriel/Documents/NetBeansProjects/AutosDBCau/src/view/JF_gui_Update_CarDetails.java</file>
-            <file>file:/C:/Users/Uriel/Documents/NetBeansProjects/AutosDBCau/src/view/JF_gui_CarDetails.java</file>
-            <file>file:/C:/Users/Uriel/Documents/NetBeansProjects/AutosDBCau/src/connection/Connection.java</file>
-            <file>file:/C:/Users/Uriel/Documents/NetBeansProjects/AutosDBCau/src/model/CarDetails.java</file>
-            <file>file:/C:/Users/Uriel/Documents/NetBeansProjects/AutosDBCau/src/view/JF_gui_CarMakers.java</file>
+            <file>file:/C:/Users/Alejandro%20Aguirre/Desktop/7moSemestre/Bases%20de%20Datos%20Avanzadas/AutosDBCau/src/controller/Controller_CarDetails.java</file>
+            <file>file:/C:/Users/Alejandro%20Aguirre/Desktop/7moSemestre/Bases%20de%20Datos%20Avanzadas/AutosDBCau/src/view/JF_gui_CarMakers.java</file>
+            <file>file:/C:/Users/Alejandro%20Aguirre/Desktop/7moSemestre/Bases%20de%20Datos%20Avanzadas/AutosDBCau/src/view/JF_gui_CarNames.java</file>
+            <file>file:/C:/Users/Alejandro%20Aguirre/Desktop/7moSemestre/Bases%20de%20Datos%20Avanzadas/AutosDBCau/src/view/JF_gui_Update_CarDetails.java</file>
+            <file>file:/C:/Users/Alejandro%20Aguirre/Desktop/7moSemestre/Bases%20de%20Datos%20Avanzadas/AutosDBCau/src/view/JF_gui_Continents.java</file>
+            <file>file:/C:/Users/Alejandro%20Aguirre/Desktop/7moSemestre/Bases%20de%20Datos%20Avanzadas/AutosDBCau/src/view/JF_gui_Delete_CarDetails.java</file>
+            <file>file:/C:/Users/Alejandro%20Aguirre/Desktop/7moSemestre/Bases%20de%20Datos%20Avanzadas/AutosDBCau/src/view/JF_gui_Delete_CarMakers.java</file>
+            <file>file:/C:/Users/Alejandro%20Aguirre/Desktop/7moSemestre/Bases%20de%20Datos%20Avanzadas/AutosDBCau/src/controller/Controller_CarMakers.java</file>
+            <file>file:/C:/Users/Alejandro%20Aguirre/Desktop/7moSemestre/Bases%20de%20Datos%20Avanzadas/AutosDBCau/src/view/JF_gui_ModelDetails.java</file>
+            <file>file:/C:/Users/Alejandro%20Aguirre/Desktop/7moSemestre/Bases%20de%20Datos%20Avanzadas/AutosDBCau/src/view/JF_gui_Countries.java</file>
         </group>
     </open-files>
 </project-private>

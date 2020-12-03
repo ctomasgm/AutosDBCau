@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 public class CarDetails {
 
-    private int id;
+    public int id;
     private double mpg;
     private int cylinders;
     private int edispl;

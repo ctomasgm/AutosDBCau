@@ -78,4 +78,61 @@ public class Controller_ModelDetails {
             return table;
         }
     }
+    
+    public JSONObject getModelDetail(int modelId) {
+        try {
+            conne = new Connection("Model_Details");
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("modelid", modelId);
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            DBObject res = conne.getTable().findOne(dbObject);
+            JSONObject json = new JSONObject(res.toString());
+     
+            return json;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+
+    }
+    
+    public boolean updateModelDetail(ModelDetails model) {
+        try {
+            conne = new Connection("Model_Details");
+            JSONObject jsonData = new JSONObject();
+            jsonData.put("modelid", model.getModelId());
+            jsonData.put("maker", model.getMaker());
+            jsonData.put("model", model.getModel());
+            
+            JSONObject jsonQuery = new JSONObject();
+            jsonQuery.put("modelid", model.getModelId());
+
+            DBObject dbObjectQuery = (DBObject) JSON.parse(jsonQuery.toString());
+
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().update(dbObjectQuery, dbObject);
+            
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+    }
+    
+    public boolean deleteModelDetail(ModelDetails data){
+        try{
+            conne = new Connection("Model_Details");
+            JSONObject jsonData = new JSONObject();
+            
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().remove(dbObject);
+            
+            return true;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return false;
+        }
+    }
 }

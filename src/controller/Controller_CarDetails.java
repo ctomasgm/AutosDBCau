@@ -164,4 +164,20 @@ public class Controller_CarDetails {
         }
 
     }
+    
+    public boolean deleteCarDetail(CarDetails data){
+        try{
+            conne = new Connection("Car_Details");
+            JSONObject jsonData = new JSONObject();
+            
+            DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
+            conne.getTable().remove(dbObject);
+            
+            return true;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return false;
+        }
+    }
 }
