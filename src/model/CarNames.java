@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONObject;
+
 public class CarNames {
 
     private int id;
@@ -7,6 +9,18 @@ public class CarNames {
     private String descr;
 
     public CarNames() {
+    }
+    
+    public CarNames(JSONObject json) {
+        if (json.has("id")) {
+            this.id = Integer.parseInt(json.get("id").toString());
+        }
+        if (json.has("model")) {
+            this.model = json.get("model").toString();
+        }
+        if (json.has("descr")) {
+            this.descr = json.get("descr").toString();
+        }
     }
 
     public CarNames(int id, String model, String descr) {

@@ -21,6 +21,8 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
     JF_gui_Error error;
     JF_gui_Success success;
     Controller_CarMakers Ccm;
+    JF_gui_Update_CarMakers updateCarMakers;
+            
     public JF_gui_CarMakers() {
         initComponents();
         Ccm = new Controller_CarMakers();
@@ -66,6 +68,11 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
         });
 
         btnCarMakersModify.setText("Modificar");
+        btnCarMakersModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarMakersModifyActionPerformed(evt);
+            }
+        });
 
         btnCarMakersDelete.setText("Eliminar");
 
@@ -218,6 +225,12 @@ public class JF_gui_CarMakers extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnCarMakersInsertActionPerformed
+
+    private void btnCarMakersModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarMakersModifyActionPerformed
+        updateCarMakers = new JF_gui_Update_CarMakers();
+        updateCarMakers.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCarMakersModifyActionPerformed
 
     /**
      * @param args the command line arguments

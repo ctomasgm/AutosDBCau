@@ -16,6 +16,7 @@ public class JF_gui_Error extends javax.swing.JFrame {
      */
     public JF_gui_Error() {
         initComponents();
+        this.setAlwaysOnTop(true);
         this.setLocationRelativeTo(null);
     }
 

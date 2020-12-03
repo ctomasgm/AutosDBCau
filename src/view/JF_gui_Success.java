@@ -16,6 +16,7 @@ public class JF_gui_Success extends javax.swing.JFrame {
      */
     public JF_gui_Success() {
         initComponents();
+        this.setAlwaysOnTop(true);
         this.setLocationRelativeTo(null);
     }
 

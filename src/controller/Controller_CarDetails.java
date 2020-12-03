@@ -162,6 +162,5 @@ public class Controller_CarDetails {
             System.out.println(e);
             return false;
         }
-
     }
 }

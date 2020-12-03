@@ -21,7 +21,8 @@ public class JF_gui_Continents extends javax.swing.JFrame {
     JF_gui_main main;
     JF_gui_Error error;
     JF_gui_Success success;
-    Controller_Continents Ccont ;
+    Controller_Continents Ccont;
+    JF_gui_Update_Continents updateContinents;
 
     public JF_gui_Continents() {
         initComponents();
@@ -65,6 +66,11 @@ public class JF_gui_Continents extends javax.swing.JFrame {
         });
 
         btnContinentsModify.setText("Modificar");
+        btnContinentsModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContinentsModifyActionPerformed(evt);
+            }
+        });
 
         btnContinentsDelete.setText("Eliminar");
         btnContinentsDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -223,6 +229,12 @@ public class JF_gui_Continents extends javax.swing.JFrame {
             }
             error.setVisible(false);
     }//GEN-LAST:event_btnContinentsDeleteActionPerformed
+
+    private void btnContinentsModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinentsModifyActionPerformed
+        updateContinents = new JF_gui_Update_Continents();
+        updateContinents.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnContinentsModifyActionPerformed
 
     /**
      * @param args the command line arguments

@@ -21,6 +21,7 @@ public class JF_gui_ModelDetails extends javax.swing.JFrame {
     JF_gui_Error error;
     JF_gui_Success success;
     Controller_ModelDetails Cmd;
+    JF_gui_Update_ModelDetails updateModelDetails;
 
     public JF_gui_ModelDetails() {
         initComponents();
@@ -58,12 +59,20 @@ public class JF_gui_ModelDetails extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
         });
 
         btnModelDetailsModify.setText("Modificar");
+        btnModelDetailsModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModelDetailsModifyActionPerformed(evt);
+            }
+        });
 
         btnModelDetailsDelete.setText("Eliminar");
 
@@ -169,13 +178,11 @@ public class JF_gui_ModelDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_tfMakerActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        main = new JF_gui_main();
-        main.setVisible(true);
-        this.dispose();
+  
     }//GEN-LAST:event_formWindowClosing
 
     private void btnModelDetailsInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModelDetailsInsertActionPerformed
-        ModelDetails car = new ModelDetails(Integer.parseInt(tfModelId.getText()), Integer.parseInt(tfMaker.getText()), Double.parseDouble(tfModel.getText()));
+        ModelDetails car = new ModelDetails(Integer.parseInt(tfModelId.getText()), Integer.parseInt(tfMaker.getText()), tfModel.getText());
         if (Cmd.insertModelDetails(car)) {
             success = new JF_gui_Success();
             success.setVisible(true);
@@ -197,6 +204,18 @@ public class JF_gui_ModelDetails extends javax.swing.JFrame {
             error.setVisible(false);
         }
     }//GEN-LAST:event_btnModelDetailsInsertActionPerformed
+
+    private void btnModelDetailsModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModelDetailsModifyActionPerformed
+        updateModelDetails = new JF_gui_Update_ModelDetails();
+        updateModelDetails.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnModelDetailsModifyActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        main = new JF_gui_main();
+        main.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
