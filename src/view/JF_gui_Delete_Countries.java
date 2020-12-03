@@ -108,7 +108,7 @@ public class JF_gui_Delete_Countries extends javax.swing.JFrame {
         JSONObject json = Ccd.getCountry(count);
 
         if (json != null) {
-            if(Ccd.deleteCountries(country)) {
+            if(Ccd.deleteCountries(count)) {
                 success = new JF_gui_Success();
                 success.setVisible(true);
                 try {

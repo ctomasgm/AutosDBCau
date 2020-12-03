@@ -60,7 +60,7 @@ public class JF_gui_Delete_ModelDetails extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel10.setText("ModelDetails Edit");
+        jLabel10.setText("ModelDetails Delete");
 
         jLabel1.setText("ModelDetail id");
 

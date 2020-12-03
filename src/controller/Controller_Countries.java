@@ -122,10 +122,13 @@ public class Controller_Countries {
         }
     }
     
-    public boolean deleteCountries(Countries data){
+    public boolean deleteCountries(int countryId){
         try{
             conne = new Connection("Coutries");
             JSONObject jsonData = new JSONObject();
+            jsonData.remove("countryid");
+            jsonData.remove("countryname");
+            jsonData.remove("continent");
             
             DBObject dbObject = (DBObject) JSON.parse(jsonData.toString());
             conne.getTable().remove(dbObject);
